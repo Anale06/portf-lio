@@ -1,0 +1,251 @@
+:root {
+  --primary: #c27847;
+  --primary-dark: #8b4e25;
+  --bg: #fffaf5;
+  --card-bg: #ffffff;
+  --text: #3c2a21;
+  --muted: #6e5d53;
+  --whatsapp: #25d366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header & Navegação */
+header {
+  background: #fff;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--primary-dark);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+/* Hero / Perfil */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 4rem;
+}
+
+.profile-img-container {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #edd8cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.4rem;
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: var(--muted);
+}
+
+/* Botão WhatsApp */
+.btn {
+  display: inline-block;
+  background: var(--whatsapp);
+  color: #fff;
+  padding: 0.85rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Títulos de Seção */
+.section-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+}
+
+/* Diferenciais */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  padding: 1.8rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #f0e6df;
+  text-align: center;
+}
+
+.feature-card span {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.feature-card h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Cardápio / Cookies */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.cookie-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f2e9e4;
+  display: flex;
+  flex-direction: column;
+}
+
+.cookie-img-container {
+  height: 200px;
+  background: #edd8cc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cookie-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cookie-card:hover .cookie-img-container img {
+  transform: scale(1.05);
+}
+
+.cookie-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cookie-info h3 {
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.cookie-info p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.cookie-info .price {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+/* Contato */
+.contact-section {
+  background: #fff;
+  padding: 3rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 4rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
