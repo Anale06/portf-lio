@@ -1,130 +1,41 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyCookies | Ana Letícia Jácome Santos</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// Número oficial da Ana Letícia atualizado: (68) 99606-4178
+const WHATSAPP_NUMERO = "5568996064178";
 
-  <!-- Menu de navegação -->
-  <header>
-    <nav>
-      <div class="logo">🍪 MyCookies</div>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#cardapio">Cardápio</a></li>
-        <li><a href="#contato">Pedir</a></li>
-      </ul>
-    </nav>
-  </header>
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Rolagem suave para os links do menu
+  const links = document.querySelectorAll('nav a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href");
+      const targetSection = document.querySelector(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
 
-  <main class="container">
-    
-    <!-- Apresentação & Foto de Perfil -->
-    <section class="hero" id="sobre">
-      <div class="profile-img-container">
-        <img src="img/foto-ana.png" alt="Ana Letícia - Chefe de Cookies">
-      </div>
-      <h1>Ana Letícia Jácome</h1>
-      <div class="subtitle">Confeitaria Artesanal • MyCookies</div>
-      <p>
-        Transformando carinho em cookies deliciosos, com textura crocante por fora e muito recheio macio por dentro.
-      </p>
-      <a href="https://wa.me/5568996064178?text=Olá,%20Ana%20Letícia!%20Gostaria%20de%20fazer%20um%20pedido%20de%20cookies!%20🍪" target="_blank" class="btn">Fazer Pedido no WhatsApp</a>
-    </section>
+  // 2. Clique no card do cookie abre o WhatsApp direto com o sabor escolhido
+  const cookieCards = document.querySelectorAll(".cookie-card");
+  cookieCards.forEach(card => {
+    card.style.cursor = "pointer";
+    card.setAttribute("title", "Clique para pedir este cookie no WhatsApp!");
 
-    <!-- Diferenciais -->
-    <section>
-      <h2 class="section-title">O que torna nossos cookies especiais?</h2>
-      <div class="features">
-        <div class="feature-card">
-          <span>✨</span>
-          <h3>100% Artesanal</h3>
-          <p>Massa fresca batida à mão com receita autoral e muito carinho.</p>
-        </div>
-        <div class="feature-card">
-          <span>🎁</span>
-          <h3>Kits para Presente</h3>
-          <p>Embalagens delicadas e personalizadas, prontas para encantar.</p>
-        </div>
-      </div>
-    </section>
+    card.addEventListener("click", () => {
+      const nomeCookie = card.querySelector("h3") ? card.querySelector("h3").innerText : "Cookie";
+      const mensagem = encodeURIComponent(`Olá, Ana Letícia! Vi no site e gostaria de encomendar o cookie: *${nomeCookie}*! 🍪`);
+      window.open(`https://wa.me/${WHATSAPP_NUMERO}?text=${mensagem}`, "_blank");
+    });
+  });
 
-    <!-- Cardápio de Cookies -->
-    <section id="cardapio">
-      <h2 class="section-title">Nossos Queridinhos</h2>
-      <div class="catalog">
-        
-        <!-- Cookie 1: Maracujá -->
-        <div class="cookie-card">
-          <div class="cookie-img-container">
-            <img src="img/foto-cookieMaracuja.png" alt="Cookie de Chocolate com Recheio de Maracujá" onerror="this.style.display='none'; this.parentElement.innerText='🍪';">
-          </div>
-          <div class="cookie-info">
-            <div>
-              <h3>Chocolate com Maracujá</h3>
-              <p>Massa rica de cacau com o contraste cítrico e cremoso do recheio de maracujá.</p>
-            </div>
-            <div class="price">R$ 11,00</div>
-          </div>
-        </div>
-
-        <!-- Cookie 2: Tradicional -->
-        <div class="cookie-card">
-          <div class="cookie-img-container">
-            <img src="img/foto-cookieTradicional.png" alt="Cookie Tradicional Choco Chips" onerror="this.style.display='none'; this.parentElement.innerText='🍪';">
-          </div>
-          <div class="cookie-info">
-            <div>
-              <h3>Tradicional Choco Chips</h3>
-              <p>Massa clássica amanteigada com generosas gotas de chocolate.</p>
-            </div>
-            <div class="price">R$ 9,00</div>
-          </div>
-        </div>
-
-        <!-- Cookie 3: Red Velvet -->
-        <div class="cookie-card">
-          <div class="cookie-img-container">
-            <img src="img/foto-cookieRed.png" alt="Cookie Red Velvet com Ninho" onerror="this.style.display='none'; this.parentElement.innerText='❤️';">
-          </div>
-          <div class="cookie-info">
-            <div>
-              <h3>Red Velvet com Ninho</h3>
-              <p>Massa aveludada vermelha com delicioso recheio cremoso de leite Ninho.</p>
-            </div>
-            <div class="price">R$ 11,00</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Seção de Contato -->
-    <section class="contact-section" id="contato">
-      <h2 class="section-title">Quer garantir a sua fornada?</h2>
-      <p style="margin-bottom: 1.5rem; color: var(--muted);">
-        Atendemos encomendas individuais, para festas ou caixinhas de presente.
-      </p>
-      <a href="https://wa.me/5568996064178?text=Olá,%20Ana%20Letícia!%20Gostaria%20de%20saber%20mais%20sobre%20as%20encomendas!%20🍪" target="_blank" class="btn">Chamar no WhatsApp</a>
-      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">
-        Acompanhe no Instagram: <strong>@mycookies</strong>
-      </p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 MyCookies por Ana Letícia Jácome Santos. Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  // 3. Efeito suave ao passar o mouse sobre os cookies
+  cookieCards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "translateY(-6px)";
+      card.style.transition = "transform 0.25s ease";
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "translateY(0)";
+    });
+  });
+});
