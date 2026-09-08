@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyCookies | Ana Letícia Jácome Santos</title>
+  
+  <!-- Fonte Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Vinculação com o arquivo CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">🍪 MyCookies</div>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="#contato">Pedir</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    
+    <!-- Apresentação & Foto de Perfil -->
+    <section class="hero" id="sobre">
+      <div class="profile-img-container">
+        <!-- Substitua pelo nome do arquivo da sua foto -->
+        <img src="foto-ana.jpg" alt="Foto de Ana Letícia" onerror="this.parentElement.innerHTML='👩‍🍳'">
+      </div>
+      <h1>Ana Letícia Jácome</h1>
+      <div class="subtitle">Confeitaria Artesanal • MyCookies</div>
+      <p>
+        Transformando carinho em cookies deliciosos, com textura crocante por fora e muito recheio macio por dentro.
+      </p>
+      <!-- Substitua 55SEUNUMERO pelo seu número de WhatsApp com DDD -->
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn">Fazer Pedido no WhatsApp</a>
+    </section>
+
+    <!-- Diferenciais -->
+    <section>
+      <h2 class="section-title">O que torna nossos cookies especiais?</h2>
+      <div class="features">
+        <div class="feature-card">
+          <span>✨</span>
+          <h3>100% Artesanal</h3>
+          <p>Massa fresca batida à mão com receita autoral e muito carinho.</p>
+        </div>
+        <div class="feature-card">
+          <span>🎁</span>
+          <h3>Kits para Presente</h3>
+          <p>Embalagens delicadas e personalizadas, prontas para encantar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cardápio de Cookies -->
+    <section id="cardapio">
+      <h2 class="section-title">Nossos Queridinhos</h2>
+      <div class="catalog">
+        
+        <!-- Cookie 1 -->
+        <div class="cookie-card">
+          <div class="cookie-img-container">
+            <img src="cookie-maracuja.jpg" alt="Cookie de Chocolate com Recheio de Maracujá" onerror="this.parentElement.innerHTML='🍪'">
+          </div>
+          <div class="cookie-info">
+            <div>
+              <h3>Chocolate com Maracujá</h3>
+              <p>Massa rica de cacau com o contraste cítrico e cremoso do recheio de maracujá.</p>
+            </div>
+            <div class="price">R$ 11,00</div>
+          </div>
+        </div>
+
+        <!-- Cookie 2 -->
+        <div class="cookie-card">
+          <div class="cookie-img-container">
+            <img src="cookie-tradicional.jpg" alt="Cookie Tradicional Choco Chips" onerror="this.parentElement.innerHTML='🍪'">
+          </div>
+          <div class="cookie-info">
+            <div>
+              <h3>Tradicional Choco Chips</h3>
+              <p>Massa clássica amanteigada com generosas gotas de chocolate.</p>
+            </div>
+            <div class="price">R$ 9,00</div>
+          </div>
+        </div>
+
+        <!-- Cookie 3 -->
+        <div class="cookie-card">
+          <div class="cookie-img-container">
+            <img src="cookie-redvelvet.jpg" alt="Cookie Red Velvet com Ninho" onerror="this.parentElement.innerHTML='❤️'">
+          </div>
+          <div class="cookie-info">
+            <div>
+              <h3>Red Velvet com Ninho</h3>
+              <p>Massa aveludada vermelha com delicioso recheio cremoso de leite Ninho.</p>
+            </div>
+            <div class="price">R$ 11,00</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Seção de Contato -->
+    <section class="contact-section" id="contato">
+      <h2 class="section-title">Quer garantir a sua fornada?</h2>
+      <p style="margin-bottom: 1.5rem; color: var(--muted);">
+        Atendemos encomendas individuais, para festas ou caixinhas de presente.
+      </p>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn">Chamar no WhatsApp</a>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">
+        Acompanhe no Instagram: <strong>@mycookies</strong>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 MyCookies por Ana Letícia Jácome Santos. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
